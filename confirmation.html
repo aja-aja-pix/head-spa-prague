@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation - Japanese Head Spa - Prague</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="mainHeader">
+        <div class="container">
+          <div class="logo">
+            <a href="index.html">Head Spa Prague</a>
+          </div>
+          <nav>
+            <ul class="nav-links">
+              <li><a href="index.html#about" class="nav-link">About</a></li>
+              <li><a href="index.html#treatments" class="nav-link">Treatments</a></li>
+              <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <!-- Mobile Menu Toggle -->
+            <button id="mobileMenuToggle" aria-label="Toggle mobile menu">
+              <i class="fas fa-bars">☰</i>
+            </button>
+          </nav>
+        </div>
+    </header>
+    <!-- Mobile Navigation -->
+    <div class="mobile-menu">
+        <ul>
+          <li><a href="index.html#about" class="mobile-nav-link">About</a></li>
+          <li><a href="index.html#treatments" class="mobile-nav-link">Treatments</a></li>
+          <li><a href="index.html#contact" class="mobile-nav-link">Contact</a></li>
+        </ul>
+    </div>
+    
+    <section class="confirmation">
+        <div class="confirmation-content">
+            <div class="confirmation-icon">
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22 11.0857V12.0057C21.9988 14.1621 21.3005 16.2604 20.0093 17.9875C18.7182 19.7147 16.9033 20.9782 14.8354 21.5896C12.7674 22.201 10.5573 22.1276 8.53447 21.3803C6.51168 20.633 4.78465 19.2518 3.61096 17.4428C2.43727 15.6338 1.87979 13.4938 2.02168 11.342C2.16356 9.19029 2.99721 7.14205 4.39828 5.5028C5.79935 3.86354 7.69279 2.72111 9.79619 2.24587C11.8996 1.77063 14.1003 1.98806 16.07 2.86572" stroke="#FFD1DC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M22 4L12 14.01L9 11.01" stroke="#FFD1DC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <h1>Booking Confirmed!</h1>
+            <div class="confirmation-details">
+                <div class="detail-row">
+                    <span class="detail-label">Package:</span>
+                    <span class="detail-value" id="confirmed-package">Luxury Package</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Date:</span>
+                    <span class="detail-value" id="confirmed-date">April 15, 2025</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Time:</span>
+                    <span class="detail-value" id="confirmed-time">2:00 PM</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Booking Number:</span>
+                    <span class="detail-value" id="booking-number">HSP-2025-0429</span>
+                </div>
+            </div>
+            <div class="additional-info">
+                <h3>What to expect</h3>
+                <p>Please arrive 15 minutes before your scheduled appointment. Wear comfortable clothing and avoid using hair products on the day of your treatment.</p>
+                <p>A confirmation email has been sent to your registered email address with all the details of your booking.</p>
+            </div>
+            <div class="confirmation-actions">
+                <button class="primary-button" onclick="window.location.href='index.html'">Return to Homepage</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>2025 Head Spa Prague | Demo Page by Andrea Baranyiova</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Get URL params to show the booking details
+        document.addEventListener('DOMContentLoaded', function() {
+            // In a production app I would get these from URL params but for this demo purpose I'm setting them directly
+            const urlParams = new URLSearchParams(window.location.search);
+            const package = urlParams.get('package') || 'Luxury Package';
+            const date = urlParams.get('date') || 'April 15, 2025';
+            const time = urlParams.get('time') || '2:00 PM';
+            const bookingNumber = urlParams.get('booking') || 'HSP-2025-' + Math.floor(1000 + Math.random() * 9000);
+            
+            // Update the DOM
+            document.getElementById('confirmed-package').textContent = package;
+            document.getElementById('confirmed-date').textContent = date;
+            document.getElementById('confirmed-time').textContent = time;
+            document.getElementById('booking-number').textContent = bookingNumber;
+        });
+    </script>
+</body>
+</html>

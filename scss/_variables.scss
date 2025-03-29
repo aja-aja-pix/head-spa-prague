@@ -1,0 +1,44 @@
+// Color Palette
+$color-primary: #E6F2F8;     
+$color-secondary: #F0F4F8;   
+$color-accent-pink: #FFD1DC; 
+$color-text-dark: #2C3E50;   
+$color-text-light: #4A6C7A;  
+
+// Typography
+$font-primary: 'Arial', sans-serif;
+$font-secondary: 'Helvetica', sans-serif;
+
+// Breakpoints
+$breakpoint-mobile: 576px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 992px;
+$breakpoint-large: 1200px;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin responsive-padding {
+  padding: 1rem;
+  
+  @media (min-width: $breakpoint-tablet) {
+    padding: 2rem;
+  }
+  
+  @media (min-width: $breakpoint-desktop) {
+    padding: 4rem;
+  }
+}
+
+@mixin box-shadow {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  
+  &:hover {
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  }
+}

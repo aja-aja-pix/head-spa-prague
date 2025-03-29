@@ -1,0 +1,39 @@
+.experience {
+    background-color: $color-primary;
+    @include responsive-padding;
+    
+    .experience-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      
+      @media (min-width: $breakpoint-tablet) {
+        flex-direction: row;
+        align-items: center;
+      }
+      
+      .experience-text {
+        flex: 1;
+        h2 {
+          color: $color-text-dark;
+          margin-bottom: 1rem;
+        }
+        p {
+          color: $color-text-light;
+          line-height: 1.6;
+        }
+      }
+      
+      .experience-video {
+        flex: 1;
+        video {
+          width: 100%;
+          height: auto;
+          border-radius: 10px;
+          @include box-shadow;
+        }
+      }
+    }
+  }
