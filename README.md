@@ -39,10 +39,4 @@ japanese-head-spa/
 - Building an interactive calendar component with JavaScript
 - Applying design thinking to create an intuitive user experience
 
-## Running the Project
-
-Simply clone the repository and open `index.html` in your browser to view the project locally.
-
----
-
 *This is a portfolio demonstration project by Andrea Baranyiova.*
